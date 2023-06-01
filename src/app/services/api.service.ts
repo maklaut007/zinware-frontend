@@ -10,4 +10,7 @@ export class ApiService {
   getCategories() {
     return this.http.get('http://localhost:8080/api/categories/');
   }
+  getProductsFromCategory(id: number) {
+    return this.http.get(`http://localhost:8080/api/categories/${id}/products`);
+  }
 }
