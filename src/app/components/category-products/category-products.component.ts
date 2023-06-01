@@ -6,10 +6,10 @@ import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
+  templateUrl: './category-products.component.html',
+  styleUrls: ['./category-products.component.scss'],
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class CategoryProductsComponent implements OnInit, OnDestroy {
   private routeSubscription: Subscription | undefined;
 
   productList: Product[] | undefined;

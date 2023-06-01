@@ -6,10 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductsComponent } from './components/products/products.component';
+import { CategoryProductsComponent } from './components/category-products/category-products.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CategoriesComponent, ProductsComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    CategoriesComponent,
+    CategoryProductsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
