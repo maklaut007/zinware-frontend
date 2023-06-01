@@ -1,0 +1,13 @@
+.category {
+  color: var(--white-color);
+  width: 80vw;
+  margin: 20px auto;
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  overflow: hidden;
+  &__image {
+    background-color: red;
+    width: 100%;
+    object-fit: cover;
+  }
+}
