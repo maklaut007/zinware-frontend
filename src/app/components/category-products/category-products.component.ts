@@ -25,6 +25,7 @@ export class CategoryProductsComponent implements OnInit, OnDestroy {
       this.apiService
         .getProductsFromCategory(params.id)
         .subscribe((data: any) => {
+          console.log(data);
           this.productList = data;
           console.log(this.productList);
         });
