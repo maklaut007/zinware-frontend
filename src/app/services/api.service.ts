@@ -15,4 +15,9 @@ export class ApiService {
       `http://localhost:8080/api/categories/${id}/products/`
     );
   }
+  getProductFromCategoryById(categoryId: number, productId: number) {
+    return this.http.get(
+      `http://localhost:8080/api/categories/${categoryId}/products/${productId}/`
+    );
+  }
 }
