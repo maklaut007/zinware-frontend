@@ -10,4 +10,12 @@
     width: 100%;
     object-fit: cover;
   }
+  &__text {
+    padding: 8px;
+  }
+  & .name {
+  }
+  & .description {
+    margin: 10px 0 5px;
+  }
 }
