@@ -8,6 +8,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getCategories() {
-    return this.http.get('http://localhost:8080/api/categories');
+    return this.http.get('http://localhost:8080/api/categories/');
   }
 }

@@ -1,1 +1,7 @@
-<p>categories works!</p>
+<div class="categories" *ngFor="let category of categories">
+  <div class="category">
+    <img class="category__image" src="{{ category.picture }}" />
+    <div class="category__name">{{ category.name }}</div>
+    <div class="category__descripiton">{{ category.description }}</div>
+  </div>
+</div>
