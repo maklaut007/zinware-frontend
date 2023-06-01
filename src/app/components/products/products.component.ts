@@ -26,6 +26,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
         .getProductsFromCategory(params.id)
         .subscribe((data: any) => {
           this.productList = data;
+          console.log(this.productList);
         });
     });
   }

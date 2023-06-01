@@ -1,0 +1,16 @@
+.product-list {
+  color: var(--white-color);
+}
+.product {
+  background-color: var(--secondary-color);
+  margin: 40px 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  &__content {
+    width: 100%;
+    padding: 10px;
+  }
+  &__image {
+    width: 100%;
+  }
+}
