@@ -30,7 +30,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
         });
     });
   }
-
+  /**
+   * Unsubscribes from the route subscription when the component is destroyed.
+   */
   ngOnDestroy(): void {
     if (this.routeSubscription) {
       this.routeSubscription.unsubscribe();
