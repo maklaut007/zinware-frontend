@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Product } from 'src/app/models/product.model';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -8,8 +9,10 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent implements OnInit {
-  productList: Product[] = [];
+export class ProductsComponent implements OnInit, OnDestroy {
+  private routeSubscription: Subscription | undefined;
+
+  productList: Product[] | undefined;
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
@@ -25,5 +28,11 @@ export class ProductsComponent implements OnInit {
           this.productList = data;
         });
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.routeSubscription) {
+      this.routeSubscription.unsubscribe();
+    }
   }
 }
