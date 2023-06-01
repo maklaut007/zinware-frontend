@@ -12,7 +12,6 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getCategories().subscribe((data) => {
-      console.log(data);
       this.categories = data as Category[];
     });
   }
