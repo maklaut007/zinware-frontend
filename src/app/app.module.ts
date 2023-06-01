@@ -6,9 +6,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CategoriesComponent],
+  declarations: [AppComponent, HeaderComponent, CategoriesComponent, ProductsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
