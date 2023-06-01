@@ -1,0 +1,12 @@
+.header {
+  width: 100vw;
+  background-color: var(--secondary-color);
+  padding: 0;
+}
+.logo {
+  width: 70px;
+  &__image {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
