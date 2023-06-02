@@ -2,10 +2,17 @@
   width: 100vw;
   background-color: var(--secondary-color);
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+}
+.cart__image {
+  height: 60px;
+  vertical-align: middle;
 }
 .logo {
   display: flex;
-  width: 70px;
+  height: 60px;
   &__image {
     width: 100%;
     vertical-align: middle;
