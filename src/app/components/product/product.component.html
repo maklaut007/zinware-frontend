@@ -7,6 +7,8 @@
     <p class="description">{{ product?.description }}</p>
     <p class="price">{{ product?.price }}</p>
     <button class="button" (click)="addToCart()">Add to cart</button>
-    <app-item-quantity [quantity]="quantity"></app-item-quantity>
+    <app-item-quantity
+      (quantityChange)="onQuantityChange($event)"
+    ></app-item-quantity>
   </div>
 </div>
