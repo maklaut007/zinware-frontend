@@ -12,6 +12,13 @@ export class ProductComponent implements OnInit {
   product: Product | undefined;
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
+  addToCart() {
+    if (this.product == undefined) return;
+    this.apiService.addToCart(this.product.id, 1).subscribe((data: any) => {
+      console.log(data);
+    });
+  }
+
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
       this.apiService
