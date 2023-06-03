@@ -32,4 +32,14 @@ export class ApiService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get('http://localhost:8080/api/cart/', { headers });
   }
+
+  addToCart(productId: number, quantity: number) {
+    const token = localStorage.getItem('jwt');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post(
+      'http://localhost:8080/api/cart/',
+      { productId, quantity },
+      { headers }
+    );
+  }
 }
