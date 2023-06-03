@@ -1,35 +1,36 @@
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="username">Username</label>
+<form class="form" (ngSubmit)="onSubmit()">
+  <div class="form__element">
+    <label class="label" for="username">Username</label>
     <input
       type="text"
-      class="username"
+      class="username input"
       [(ngModel)]="username"
       name="username"
       required
     />
   </div>
-  <div>
-    <label for="email">Email</label>
+  <div class="form__element">
+    <label class="label" for="email">Email</label>
     <input
       type="email"
-      class="email"
+      class="email input"
       [(ngModel)]="email"
       name="email"
       required
     />
   </div>
-  <div>
-    <label for="password">Password</label>
+  <div class="form__element">
+    <label class="label" for="password">Password</label>
     <input
       type="password"
-      class="password"
+      class="password input"
       [(ngModel)]="password"
       name="password"
       required
     />
   </div>
-  <div>
-    <button type="submit">Register</button>
+  <div class="form__element">
+    <button class="button" type="submit">Register</button>
   </div>
 </form>
+<div>Already a user?<a routerLink="/login">Login</a></div>
