@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { User } from 'src/app/models/user.mode';
+import { RegisterUser } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  user: User = {
+  user: RegisterUser = {
     userName: '',
     email: '',
     password: '',
