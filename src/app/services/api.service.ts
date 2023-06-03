@@ -27,4 +27,7 @@ export class ApiService {
   loginUser(user: LoginUser) {
     return this.http.post('http://localhost:8080/auth/login/', user);
   }
+  getCart() {
+    return this.http.get('http://localhost:8080/api/cart/');
+  }
 }
