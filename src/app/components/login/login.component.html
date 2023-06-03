@@ -1,1 +1,26 @@
-<p>login works!</p>
+<form class="form" (ngSubmit)="onSubmit()">
+  <div class="form__element">
+    <label class="label" for="email">Email</label>
+    <input
+      type="email"
+      class="email input"
+      [(ngModel)]="email"
+      name="email"
+      required
+    />
+  </div>
+  <div class="form__element">
+    <label class="label" for="password">Password</label>
+    <input
+      type="password"
+      class="password input"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+  </div>
+  <div class="form__element">
+    <button class="button" type="submit">Login</button>
+  </div>
+</form>
+<div>Dont have an account?<a routerLink="/register">Register</a></div>
