@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegisterUser, LoginUser } from '../models/user.model';
 
 @Injectable({
@@ -28,6 +28,8 @@ export class ApiService {
     return this.http.post('http://localhost:8080/auth/login/', user);
   }
   getCart() {
-    return this.http.get('http://localhost:8080/api/cart/');
+    const token = localStorage.getItem('jwt');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get('http://localhost:8080/api/cart/', { headers });
   }
 }

@@ -15,7 +15,6 @@ export class CartComponent {
 
   ngOnInit(): void {
     this.apiService.getCart().subscribe((data: any) => {
-      console.log(data);
       this.cart = data;
     });
   }

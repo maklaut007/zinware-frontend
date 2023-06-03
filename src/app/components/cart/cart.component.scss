@@ -1,0 +1,8 @@
+.item {
+  display: flex;
+  margin: 30px 12px;
+  color: var(--white-color);
+  &__image {
+    width: 40%;
+  }
+}
