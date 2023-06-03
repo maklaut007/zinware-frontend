@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user.mode';
+import { RegisterUser, LoginUser } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,10 @@ export class ApiService {
       `http://localhost:8080/api/categories/${categoryId}/products/${productId}/`
     );
   }
-  registerUser(user: User) {
+  registerUser(user: RegisterUser) {
     return this.http.post('http://localhost:8080/auth/register/', user);
+  }
+  loginUser(user: LoginUser) {
+    return this.http.post('http://localhost:8080/auth/login/', user);
   }
 }
