@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,8 @@ export class ApiService {
     return this.http.get(
       `http://localhost:8080/api/categories/${categoryId}/products/${productId}/`
     );
+  }
+  registerUser(user: User) {
+    return this.http.post('http://localhost:8080/api/users/', user);
   }
 }
