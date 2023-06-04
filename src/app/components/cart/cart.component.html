@@ -5,7 +5,10 @@
       <img src="{{ item.product.image }}" alt="product" class="item__image" />
       <h2 class="item__name">{{ item.product.name }}</h2>
       <p>Price: {{ item.product.price * item.quantity }}</p>
-      <app-item-quantity></app-item-quantity>
+      <app-item-quantity
+        [quantity]="item.quantity"
+        (quantityChange)="onQuantityChange($event)"
+      ></app-item-quantity>
     </div>
   </div>
 </div>

@@ -10,11 +10,16 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CartComponent {
   cart: Cart = {} as Cart;
-
   constructor(private apiService: ApiService) {}
+
+  onQuantityChange(quantity: number) {
+    console.log(quantity);
+  }
 
   ngOnInit(): void {
     this.apiService.getCart().subscribe((data: any) => {
+      console.log(data);
+
       this.cart = data;
     });
   }
