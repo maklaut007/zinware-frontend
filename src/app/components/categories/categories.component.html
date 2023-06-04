@@ -1,6 +1,15 @@
-<div class="categories" *ngFor="let category of categories">
-  <a class="category" [routerLink]="['/categories', category.id, 'products']">
-    <img class="category__image" src="{{ category.picture }}" />
+<div class="categories">
+  <a
+    class="category"
+    *ngFor="let category of categories; let index = index"
+    (mouseenter)="addHoverClass(index)"
+    [routerLink]="['/categories', category.id, 'products']"
+    [ngClass]="{ 'category-focus': isHovered[index] }"
+  >
+    <div class="image-wrap">
+      <img class="category__image" src="{{ category.picture }}" />
+    </div>
+
     <div class="category__text">
       <h2 class="name">{{ category.name }}</h2>
       <p class="description">{{ category.description }}</p>

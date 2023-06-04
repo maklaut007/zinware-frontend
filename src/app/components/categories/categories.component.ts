@@ -8,7 +8,17 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CategoriesComponent implements OnInit {
   categories: Category[] = [];
-  constructor(private apiService: ApiService) {}
+  isHovered: boolean[];
+
+  constructor(private apiService: ApiService) {
+    this.isHovered = Array(this.categories.length).fill(false);
+    this.isHovered[0] = true;
+  }
+
+  addHoverClass(index: number) {
+    this.isHovered = Array(this.categories.length).fill(false);
+    this.isHovered[index] = true;
+  }
 
   ngOnInit(): void {
     this.apiService.getCategories().subscribe((data) => {
