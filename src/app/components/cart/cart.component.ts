@@ -19,7 +19,11 @@ export class CartComponent {
         console.log(data);
       });
   }
-
+  onDeleteItem(item: CartItem) {
+    this.apiService.deleteItemFromCart(item.id).subscribe((data: any) => {
+      this.cart = data;
+    });
+  }
   ngOnInit(): void {
     this.apiService.getCart().subscribe((data: any) => {
       console.log(data);

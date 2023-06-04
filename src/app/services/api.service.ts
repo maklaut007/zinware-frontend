@@ -56,7 +56,7 @@ export class ApiService {
       { headers }
     );
   }
-  deleteItemFfomCart(itemId: number) {
+  deleteItemFromCart(itemId: number) {
     const token = localStorage.getItem('jwt');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(`http://localhost:8080/api/cart/${itemId}/`, {

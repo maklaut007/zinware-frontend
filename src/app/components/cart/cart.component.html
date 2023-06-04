@@ -9,6 +9,7 @@
         [quantity]="item.quantity"
         (quantityChange)="onQuantityChange($event, item)"
       ></app-item-quantity>
+      <button class="delete" (click)="onDeleteItem(item)">X</button>
     </div>
   </div>
 </div>
