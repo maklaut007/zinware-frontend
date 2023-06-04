@@ -7,7 +7,7 @@
       <p>Price: {{ item.product.price * item.quantity }}</p>
       <app-item-quantity
         [quantity]="item.quantity"
-        (quantityChange)="onQuantityChange($event)"
+        (quantityChange)="onQuantityChange($event, item)"
       ></app-item-quantity>
     </div>
   </div>
