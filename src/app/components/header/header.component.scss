@@ -1,5 +1,6 @@
 .header {
   width: 100vw;
+  height: 60px;
   background-color: var(--secondary-color);
   padding: 0 50px;
   display: flex;
@@ -9,17 +10,18 @@
   z-index: 100;
 }
 .cart__image {
-  height: 60px;
+  height: 40px;
   vertical-align: middle;
 }
 .logo {
   display: flex;
   border-radius: 12px;
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   color: var(--white-color);
   text-transform: uppercase;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   &__image {
+    margin-right: 10px;
     height: 50px;
     vertical-align: middle;
   }
