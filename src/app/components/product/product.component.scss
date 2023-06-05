@@ -37,5 +37,19 @@
 @media only screen and (min-width: 1024px) {
   .product {
     margin: 0 auto;
+    &__info {
+      margin-top: 20px;
+      width: 60%;
+      padding: 30px;
+    }
+    &__image > img {
+      height: 400px;
+      width: 800px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    &__order {
+      justify-content: space-between;
+    }
   }
 }
