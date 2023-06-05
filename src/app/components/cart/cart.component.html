@@ -1,15 +1,19 @@
 <div class="cart">
-  <h1>Your cart</h1>
+  <h1 class="title">Your cart</h1>
   <div class="product-list">
     <div class="item" *ngFor="let item of cart.cartItems">
       <img src="{{ item.product.image }}" alt="product" class="item__image" />
-      <h2 class="item__name">{{ item.product.name }}</h2>
-      <p>Price: {{ item.product.price * item.quantity }}</p>
-      <app-item-quantity
-        [quantity]="item.quantity"
-        (quantityChange)="onQuantityChange($event, item)"
-      ></app-item-quantity>
-      <button class="delete" (click)="onDeleteItem(item)">X</button>
+      <h2 class="item__name">
+        {{ item.product.name }}
+      </h2>
+      <div class="price-menu">
+        <app-item-quantity
+          [quantity]="item.quantity"
+          (quantityChange)="onQuantityChange($event, item)"
+        ></app-item-quantity>
+        <p>Total: ${{ item.product.price * item.quantity }}</p>
+      </div>
+      <button class="delete" (click)="onDeleteItem(item)">&#10006;</button>
     </div>
   </div>
 </div>

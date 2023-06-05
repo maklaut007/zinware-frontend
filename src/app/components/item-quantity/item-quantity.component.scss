@@ -21,4 +21,7 @@
   background-color: var(--primary-color);
   font-size: 1.1rem;
   color: var(--white-color);
+  &:hover {
+    color: var(--extra-color);
+  }
 }
