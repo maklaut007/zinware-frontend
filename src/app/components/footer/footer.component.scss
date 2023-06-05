@@ -1,0 +1,17 @@
+.footer {
+  height: 40px;
+  background-color: var(--primary-color);
+}
+.page-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.category {
+  text-decoration: none;
+  &__link {
+    color: white;
+    margin: 20px;
+  }
+}
