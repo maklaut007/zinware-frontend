@@ -2,7 +2,7 @@
   width: 100vw;
   height: 60px;
   background-color: var(--secondary-color);
-  padding: 0 50px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,8 +15,9 @@
 }
 .logo {
   display: flex;
+  align-items: center;
   border-radius: 12px;
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   color: var(--white-color);
   text-transform: uppercase;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -27,6 +28,36 @@
   }
 }
 
+.auth {
+  display: flex;
+}
+.auth-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+}
+.register {
+  display: none;
+}
 .header-margin {
   height: 60px;
+}
+@media only screen and (min-width: 1024px) {
+  .register {
+    display: flex;
+  }
+  .auth-link {
+    margin-right: 20px;
+    transition: background-color 0.3s ease-out;
+    &:hover {
+      background-color: var(--extra-color);
+    }
+  }
+  .header {
+    padding: 0 10vw 0 5vw;
+  }
 }
