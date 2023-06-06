@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,10 +13,9 @@ export class CheckoutComponent {
     cardNumber: '',
     cardHolder: '',
     cardExpiry: '',
-    cardName: '',
     cardCvc: '',
   };
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
   submitCheckout() {}
 }
