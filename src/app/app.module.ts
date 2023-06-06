@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ItemQuantityComponent } from './components/item-quantity/item-quantity.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
     LoginComponent,
     ItemQuantityComponent,
     FooterComponent,
+    CheckoutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
