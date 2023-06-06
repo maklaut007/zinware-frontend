@@ -6,22 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent {
-  data: {
-    name: string;
-    address: string;
-    creditCard: string;
-    expiryDate: string;
-    cvv: string;
+  formData = {
+    name: '',
+    address: '',
+    cardNumber: '',
+    cardHolder: '',
+    cardExpiry: '',
+    cardName: '',
+    cardCvc: '',
   };
-  constructor() {
-    this.data = {
-      name: '',
-      address: '',
-      creditCard: '',
-      expiryDate: '',
-      cvv: '',
-    };
-  }
+  constructor() {}
 
   submitCheckout() {}
 }
