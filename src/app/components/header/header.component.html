@@ -6,6 +6,7 @@
 
   <ng-container *ngIf="getTokenFromLocalStorage()">
     <a [routerLink]="['/cart']" class="cart">
+      <div class="prod-number">{{ numberInCart }}</div>
       <img class="cart__image" src="/assets/images/cart-icon.png" alt="cart" />
     </a>
   </ng-container>

@@ -3,6 +3,7 @@ import { Cart } from 'src/app/models/cart.model';
 import { Category } from 'src/app/models/category.model';
 import { ApiService } from 'src/app/services/api.service';
 import { CartItem } from 'src/app/models/cart.model';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,7 +12,10 @@ import { CartItem } from 'src/app/models/cart.model';
 export class CartComponent implements OnInit {
   cart: Cart = {} as Cart;
   totalPrice: number = 0;
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private cartService: CartService
+  ) {}
 
   calculateTotalPrice(): number {
     let totalPrice = 0;
@@ -33,6 +37,7 @@ export class CartComponent implements OnInit {
   onDeleteItem(item: CartItem) {
     this.apiService.deleteItemFromCart(item.id).subscribe((data: any) => {
       this.cart = data;
+      this.cartService.decreaseCountByOne();
     });
   }
   ngOnInit(): void {
