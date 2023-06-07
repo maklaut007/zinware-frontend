@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CheckoutProps } from 'src/app/models/checkout.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -7,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent {
-  formData = {
+  formData: CheckoutProps = {
     name: '',
     address: '',
     cardNumber: '',
@@ -15,7 +17,12 @@ export class CheckoutComponent {
     cardExpiry: '',
     cardCvc: '',
   };
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
-  submitCheckout() {}
+  submitCheckout() {
+    this.apiService.submitCheckout(this.formData).subscribe(() => {
+      // Redirect to the "/main" page
+      this.router.navigate(['/']);
+    });
+  }
 }
