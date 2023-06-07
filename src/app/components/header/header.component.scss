@@ -28,7 +28,10 @@
   }
 }
 
-.auth {
+.cart {
+  position: relative;
+}
+.produ .auth {
   display: flex;
 }
 .auth-link {
@@ -47,7 +50,16 @@
   height: 60px;
 }
 .prod-number {
-  color: red;
+  display: flex;
+  width: 18px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  height: 18px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  bottom: 2px;
 }
 @media only screen and (min-width: 1024px) {
   .register {
