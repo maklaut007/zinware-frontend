@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegisterUser, LoginUser } from '../models/user.model';
+import { CheckoutProps } from '../models/checkout.model';
 
 @Injectable({
   providedIn: 'root',
@@ -60,6 +61,13 @@ export class ApiService {
     const token = localStorage.getItem('jwt');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(`http://localhost:8080/api/cart/${itemId}/`, {
+      headers,
+    });
+  }
+  submitCheckout(checkoutBody: CheckoutProps) {
+    const token = localStorage.getItem('jwt');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post('http://localhost:8080/api/checkout/', checkoutBody, {
       headers,
     });
   }

@@ -16,4 +16,6 @@
       <button class="delete" (click)="onDeleteItem(item)">&#10006;</button>
     </div>
   </div>
+  <a routerLink="/checkout/">Checkout</a>
+  <p class="total-price">Total Price: ${{ calculateTotalPrice() }}</p>
 </div>
