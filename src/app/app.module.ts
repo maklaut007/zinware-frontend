@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ItemQuantityComponent } from './components/item-quantity/item-quantity.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     ItemQuantityComponent,
     FooterComponent,
     CheckoutComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
