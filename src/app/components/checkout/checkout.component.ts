@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CheckoutProps } from 'src/app/models/checkout.model';
 import { ApiService } from 'src/app/services/api.service';
@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss'],
 })
-export class CheckoutComponent {
+export class CheckoutComponent implements OnInit {
   formData: CheckoutProps = {
     name: '',
     address: '',
@@ -17,7 +17,17 @@ export class CheckoutComponent {
     cardExpiry: '',
     cardCvc: '',
   };
+  total: number = 0;
+
   constructor(private apiService: ApiService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.apiService.getCart().subscribe((data: any) => {
+      for (const item of data.cartItems) {
+        this.total += item.product.price * item.quantity;
+      }
+    });
+  }
 
   submitCheckout() {
     this.apiService.submitCheckout(this.formData).subscribe(() => {
