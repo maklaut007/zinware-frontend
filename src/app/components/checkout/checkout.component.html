@@ -63,7 +63,7 @@
     class="form-element input-short"
     placeholder="CVC"
   />
-  <div class="total-price">Price total: ${{ total }}</div>
+  <div class="total-price">Price total: ${{ formData.total }}</div>
   <button
     type="submit"
     [disabled]="!checkoutForm.form.valid"

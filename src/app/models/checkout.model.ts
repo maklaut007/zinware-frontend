@@ -5,4 +5,5 @@ export interface CheckoutProps {
   cardHolder: string;
   cardExpiry: string;
   cardCvc: string;
+  total: number;
 }

@@ -16,15 +16,14 @@ export class CheckoutComponent implements OnInit {
     cardHolder: '',
     cardExpiry: '',
     cardCvc: '',
+    total: 0,
   };
-  total: number = 0;
-
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
     this.apiService.getCart().subscribe((data: any) => {
       for (const item of data.cartItems) {
-        this.total += item.product.price * item.quantity;
+        this.formData.total += item.product.price * item.quantity;
       }
     });
   }
