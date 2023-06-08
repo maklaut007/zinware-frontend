@@ -13,18 +13,28 @@ export class LoginComponent {
     email: '',
     password: '',
   };
+  errorMessage: string = '';
 
   constructor(private apiService: ApiService, private router: Router) {}
 
   onSubmit() {
-    this.apiService.loginUser(this.user).subscribe((data: any) => {
-      if (data) {
-        // Save jwt to local storage
-        localStorage.setItem('jwt', data.message);
-        console.log(localStorage);
-        // Redirect to the "/categories" page
-        this.router.navigate(['/categories']);
-      }
-    });
+    if (!this.validateForm()) {
+      this.apiService.loginUser(this.user).subscribe((data: any) => {
+        if (data) {
+          // Save jwt to local storage
+          localStorage.setItem('jwt', data.message);
+          console.log(localStorage);
+          // Redirect to the "/categories" page
+          this.router.navigate(['/categories']);
+        }
+      });
+    }
+  }
+  validateForm(): boolean {
+    if (!this.user.email || !this.user.password) {
+      this.errorMessage = 'Please fill in all the fields.';
+      return false;
+    }
+    return true;
   }
 }

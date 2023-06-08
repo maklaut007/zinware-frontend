@@ -94,5 +94,7 @@ https://www.w3schools.com
 - [Trello](https://trello.com) - planning board
 - [Figma](https://www.figma.com) - design scetches
 - [Midjorney AI](https://www.midjourney.com/home) - image generation
+- [Font Awesome](https://fontawesome.com) - icons
+- [BEM](https://getbem.com) - classes naming methodology
 
 ## Shoutouts

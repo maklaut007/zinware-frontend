@@ -23,6 +23,7 @@
   <div class="form__element">
     <button class="button" type="submit">Login</button>
   </div>
+  <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
   <p class="register-link">
     Dont have an account?<a routerLink="/register"> Register</a>
   </p>
