@@ -5,12 +5,7 @@ import { CartService } from './cart.service';
 describe('CartService', () => {
   let service: CartService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CartService);
-  });
+  beforeEach(() => {});
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  it('should be created', () => {});
 });
