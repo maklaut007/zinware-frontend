@@ -27,4 +27,8 @@ export class CartService {
       this.cartUpdated.emit(this.cartItemCount);
     }
   }
+  changeCartItemCount(count: number) {
+    this.cartItemCount = count;
+    this.cartUpdated.emit(this.cartItemCount);
+  }
 }

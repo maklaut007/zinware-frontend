@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CheckoutProps } from 'src/app/models/checkout.model';
 import { ApiService } from 'src/app/services/api.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -18,7 +19,11 @@ export class CheckoutComponent implements OnInit {
     cardCvc: '',
     total: 0,
   };
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.apiService.getCart().subscribe((data: any) => {
@@ -30,6 +35,8 @@ export class CheckoutComponent implements OnInit {
 
   submitCheckout() {
     this.apiService.submitCheckout(this.formData).subscribe(() => {
+      // Change number on cart icon
+      this.cartService.changeCartItemCount(0);
       // Redirect to the "/main" page
       this.router.navigate(['/']);
     });
