@@ -1,6 +1,10 @@
 .footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   height: 40px;
   background-color: var(--secondary-color);
+  color: var(--extra-color);
 }
 .page-list {
   display: flex;
@@ -13,5 +17,21 @@
   &__link {
     color: white;
     margin: 20px;
+  }
+}
+.copyright {
+  margin: auto;
+  font-size: 0.9rem;
+}
+.socials {
+  display: flex;
+  margin: auto;
+  & a {
+    color: var(--extra-color);
+    font-size: 1.4rem;
+    margin: 0 10px;
+    &:hover {
+      color: var(--white-color);
+    }
   }
 }
