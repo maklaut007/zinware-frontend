@@ -8,14 +8,23 @@
   max-width: 800px;
   overflow: hidden;
 
-  &__image > img {
-    width: 100%;
+  &__image {
     border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    & > img {
+      object-fit: cover;
+      width: 100%;
+      display: block;
+    }
   }
   &__info {
     background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 12px;
+    & > .name {
+      color: var(--extra-color);
+    }
   }
   &__order {
     margin: 20px 0 10px;
@@ -27,6 +36,7 @@
 .order-button {
   background-color: var(--primary-color);
   width: 40%;
+  max-width: 270px;
   border-radius: 6px;
   margin-left: 30px;
   color: var(--extra-color);
@@ -34,17 +44,24 @@
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  &:hover {
+    background-color: var(--white-color);
+    color: var(--secondary-color);
+  }
 }
 @media only screen and (min-width: 1024px) {
   .product {
     margin: 0 auto;
     &__info {
       margin-top: 20px;
-      width: 60%;
       padding: 30px;
+      & > .description {
+        padding: 20px 0;
+      }
     }
     &__image > img {
-      height: 400px;
+      height: 420px;
       width: 800px;
       object-fit: cover;
       border-radius: 12px;
