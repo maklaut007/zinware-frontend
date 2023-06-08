@@ -18,12 +18,11 @@ export class LoginComponent {
   constructor(private apiService: ApiService, private router: Router) {}
 
   onSubmit() {
-    if (!this.validateForm()) {
+    if (this.validateForm()) {
       this.apiService.loginUser(this.user).subscribe((data: any) => {
         if (data) {
           // Save jwt to local storage
           localStorage.setItem('jwt', data.message);
-          console.log(localStorage);
           // Redirect to the "/categories" page
           this.router.navigate(['/categories']);
         }
