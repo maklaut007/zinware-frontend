@@ -17,6 +17,11 @@ export class LoginComponent {
 
   constructor(private apiService: ApiService, private router: Router) {}
 
+  /**
+   * Submit the form if form is valid and user is logged in.
+   * Otherwise, display error message.
+   */
+
   onSubmit() {
     if (this.validateForm()) {
       this.apiService.loginUser(this.user).subscribe((data: any) => {
@@ -29,6 +34,10 @@ export class LoginComponent {
       });
     }
   }
+  /**
+   * Validate the form.
+   * @returns true if form is valid, false otherwise.
+   */
   validateForm(): boolean {
     if (!this.user.email || !this.user.password) {
       this.errorMessage = 'Please fill in all the fields.';

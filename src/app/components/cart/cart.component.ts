@@ -17,15 +17,27 @@ export class CartComponent implements OnInit {
     private cartService: CartService
   ) {}
 
+  /**
+   * Returns the total price of the cart items
+   * @returns total  price of the cart items
+   */
   calculateTotalPrice(): number {
     let totalPrice = 0;
+
+    // if no items in cart
     if (!this.cart.cartItems) return totalPrice;
+
     for (const item of this.cart.cartItems) {
       totalPrice += item.product.price * item.quantity;
     }
     return totalPrice;
   }
 
+  /**
+   * Calculates total price of the cart items when the cart item quantity is changed
+   * @param quantity new quantity of the cart item
+   * @param item cart item whose quantity is changed
+   */
   onQuantityChange(quantity: number, item: CartItem) {
     this.apiService
       .changeItemQuantity(item.id, quantity)
@@ -34,12 +46,21 @@ export class CartComponent implements OnInit {
         this.totalPrice = this.calculateTotalPrice();
       });
   }
+
+  /**
+   * Delete item from cart when delete button is clicked
+   * @param item cart item to be deleted
+   */
   onDeleteItem(item: CartItem) {
     this.apiService.deleteItemFromCart(item.id).subscribe((data: any) => {
       this.cart = data;
       this.cartService.decreaseCountByOne();
     });
   }
+
+  /**
+   * Subscribe to the cart service to get the cart items
+   */
   ngOnInit(): void {
     this.apiService.getCart().subscribe((data: any) => {
       this.cart = data;

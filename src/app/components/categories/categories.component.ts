@@ -15,11 +15,18 @@ export class CategoriesComponent implements OnInit {
     this.isHovered[0] = true;
   }
 
+  /**
+   * Add hover class to category that is hovered over and remove class from other categories.
+   * @param index of hovered category
+   */
   addHoverClass(index: number) {
     this.isHovered = Array(this.categories.length).fill(false);
     this.isHovered[index] = true;
   }
 
+  /**
+   * Get all categories from API and set them to categories variable.
+   */
   ngOnInit(): void {
     this.apiService.getCategories().subscribe((data) => {
       this.categories = data as Category[];

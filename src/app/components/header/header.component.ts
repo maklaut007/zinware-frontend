@@ -10,17 +10,25 @@ import { CartService } from 'src/app/services/cart.service';
 export class HeaderComponent {
   numberInCart: number = 0;
 
-  getTokenFromLocalStorage(): boolean {
-    const token = localStorage.getItem('jwt');
-    return !!token;
-  }
   constructor(
     private apiService: ApiService,
     private cartService: CartService
   ) {}
+  /**
+   * Returns true if there is a token in local storage
+   * @returns true if token in storage otherwise return false
+   */
+  getTokenFromLocalStorage(): boolean {
+    const token = localStorage.getItem('jwt');
+    return !!token;
+  }
 
+  /**
+   * If there is a token in local storage, get the cart items from the API
+   * Subscription to the cartUpdated event to update the number of items in the cart
+   */
   ngOnInit(): void {
-    if (localStorage.getItem('jwt')) {
+    if (this.getTokenFromLocalStorage()) {
       this.apiService.getCart().subscribe((data: any) => {
         this.numberInCart = data.cartItems.length;
       });

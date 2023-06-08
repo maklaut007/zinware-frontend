@@ -19,8 +19,9 @@ export class ProductComponent implements OnInit {
     private cartService: CartService
   ) {}
 
-  // Add product to the cart and update the number of items in the cart
-  // If the product is already in the cart don't update number
+  /**  Add product to the cart and update the number of items in the cart
+   * If the product is already in the cart don't update number
+   */
   addToCart() {
     if (this.product == undefined) return;
     this.apiService
@@ -32,12 +33,16 @@ export class ProductComponent implements OnInit {
         }
       });
   }
-  // Update the quantity of the product before adding to the cart
+  /** Update the quantity of the product before adding to the cart
+   *
+   */
   onQuantityChange(quantity: number) {
     this.quantity = quantity;
   }
-  // Get the product from the category by id
-  // and subscribe to the data
+
+  /** Get the product from the category by id
+   * and subscribe to the data
+   */
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
       this.apiService

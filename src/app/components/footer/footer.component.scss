@@ -1,8 +1,8 @@
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+
   align-items: center;
-  height: 40px;
+
   background-color: var(--secondary-color);
   color: var(--extra-color);
 }
@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin: 10px auto;
 }
 .category {
   text-decoration: none;
@@ -20,7 +21,7 @@
   }
 }
 .copyright {
-  margin: auto;
+  margin: 10px auto 0;
   font-size: 0.9rem;
 }
 .socials {
@@ -33,5 +34,14 @@
     &:hover {
       color: var(--white-color);
     }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .footer {
+    height: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .copyright {
+    margin: auto;
   }
 }
