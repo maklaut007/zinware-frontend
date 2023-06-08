@@ -20,9 +20,11 @@ export class HeaderComponent {
   ) {}
 
   ngOnInit(): void {
-    this.apiService.getCart().subscribe((data: any) => {
-      this.numberInCart = data.cartItems.length;
-    });
+    if (localStorage.getItem('jwt')) {
+      this.apiService.getCart().subscribe((data: any) => {
+        this.numberInCart = data.cartItems.length;
+      });
+    }
 
     this.cartService.cartUpdated.subscribe((cartItemCount: number) => {
       this.numberInCart = cartItemCount;

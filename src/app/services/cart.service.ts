@@ -9,11 +9,13 @@ export class CartService {
   cartUpdated: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private apiService: ApiService) {
-    // Call the getCart() method to retrieve the cart items number
-    this.apiService.getCart().subscribe((data: any) => {
-      this.cartItemCount = data.cartItems.length;
-      this.cartUpdated.emit(this.cartItemCount);
-    });
+    if (localStorage.getItem('jwt')) {
+      // Call the getCart() method to retrieve the cart items number
+      this.apiService.getCart().subscribe((data: any) => {
+        this.cartItemCount = data.cartItems.length;
+        this.cartUpdated.emit(this.cartItemCount);
+      });
+    }
   }
 
   increaseCountByOne() {
