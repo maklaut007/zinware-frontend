@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderComponent } from './header.component';
+import { FooterComponent } from './footer.component';
 
-describe('HeaderComponent', () => {
+describe('FooterComponent', () => {
   beforeEach(() => {});
 
   it('should create', () => {});

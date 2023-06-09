@@ -1,0 +1,38 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <h1 class="title">Register</h1>
+  <div class="form__element">
+    <label class="label" for="username">Username</label>
+    <input
+      type="text"
+      class="username input"
+      [(ngModel)]="user.userName"
+      name="username"
+      required
+    />
+  </div>
+  <div class="form__element">
+    <label class="label" for="email">Email</label>
+    <input
+      type="email"
+      class="email input"
+      [(ngModel)]="user.email"
+      name="email"
+      required
+    />
+  </div>
+  <div class="form__element">
+    <label class="label" for="password">Password</label>
+    <input
+      type="password"
+      class="password input"
+      [(ngModel)]="user.password"
+      name="password"
+      required
+    />
+  </div>
+  <div class="form__element">
+    <button class="button" type="submit">Register</button>
+  </div>
+  <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <p class="login-link">Already a user?<a routerLink="/login"> Login</a></p>
+</form>

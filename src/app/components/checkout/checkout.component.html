@@ -1,0 +1,74 @@
+<form
+  (ngSubmit)="submitCheckout()"
+  #checkoutForm="ngForm"
+  class="checkout-form"
+>
+  <h1 class="checkout-title">Checkout</h1>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    [(ngModel)]="formData.name"
+    required
+    class="form-element"
+    placeholder="Name"
+  />
+
+  <input
+    type="text"
+    id="address"
+    name="address"
+    [(ngModel)]="formData.address"
+    required
+    class="form-element"
+    placeholder="Address"
+  />
+
+  <input
+    type="text"
+    id="cardNumber"
+    name="cardNumber"
+    [(ngModel)]="formData.cardNumber"
+    required
+    class="form-element"
+    placeholder="Card Number"
+  />
+
+  <input
+    type="text"
+    id="cardHolder"
+    name="cardHolder"
+    [(ngModel)]="formData.cardHolder"
+    required
+    class="form-element"
+    placeholder="Card Holder"
+  />
+
+  <input
+    type="text"
+    id="cardExpiry"
+    name="cardExpiry"
+    [(ngModel)]="formData.cardExpiry"
+    required
+    class="form-element input-short"
+    placeholder="Exp"
+  />
+
+  <input
+    type="text"
+    id="cardCvc"
+    name="cardCvc"
+    [(ngModel)]="formData.cardCvc"
+    required
+    class="form-element input-short"
+    placeholder="CVC"
+  />
+  <div class="total-price">Price total: ${{ formData.total }}</div>
+  <button
+    type="submit"
+    [disabled]="!checkoutForm.form.valid"
+    class="submit-btn"
+  >
+    Submit
+  </button>
+</form>

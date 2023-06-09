@@ -1,0 +1,12 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  font-size: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .not-found {
+    font-size: 3rem;
+  }
+}

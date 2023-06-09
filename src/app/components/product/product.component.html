@@ -1,0 +1,16 @@
+<div class="product">
+  <div class="product__image">
+    <img src="{{ product?.image }}" alt="product" />
+  </div>
+  <div class="product__info">
+    <h2 class="name">{{ product?.name }}</h2>
+    <p class="description">{{ product?.description }}</p>
+    <p class="price">Price: ${{ product?.price }}</p>
+    <div class="product__order">
+      <app-item-quantity
+        (quantityChange)="onQuantityChange($event)"
+      ></app-item-quantity>
+      <button class="order-button" (click)="addToCart()">Add to cart</button>
+    </div>
+  </div>
+</div>

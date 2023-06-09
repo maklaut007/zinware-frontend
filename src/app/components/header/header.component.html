@@ -1,5 +1,20 @@
 <header class="header">
-  <div class="logo">
+  <a [routerLink]="['/categories']" class="logo">
     <img class="logo__image" src="/assets/images/logo.png" alt="Logo" />
+    <div class="company-name">Zinware</div>
+  </a>
+
+  <div class="menu" *ngIf="getTokenFromLocalStorage()">
+    <div class="auth-link" (click)="onLogOut()">Log out</div>
+    <a [routerLink]="['/cart']" class="cart">
+      <div class="prod-number">{{ numberInCart }}</div>
+      <img class="cart__image" src="/assets/images/cart-icon.png" alt="cart" />
+    </a>
+  </div>
+
+  <div class="auth" *ngIf="!getTokenFromLocalStorage()">
+    <a [routerLink]="['/login']" class="auth-link">Sign In</a>
+    <a [routerLink]="['/register']" class="auth-link register">Register</a>
   </div>
 </header>
+<div class="header-margin"></div>

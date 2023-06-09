@@ -1,0 +1,27 @@
+.quantity-selector {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  background-color: var(--primary-color);
+  font-size: 1.2rem;
+  border-radius: 6px;
+  overflow: hidden;
+  color: var(--extra-color);
+}
+.quantity-number {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.quantity-button {
+  cursor: pointer;
+  width: 40%;
+  background-color: var(--primary-color);
+  font-size: 1.1rem;
+  color: var(--white-color);
+  &:hover {
+    color: var(--extra-color);
+  }
+}
