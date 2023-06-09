@@ -21,9 +21,9 @@ You can find backend for this project [here](https://github.com/maklaut007/zinwa
 
 ## Technologies and Methodologies
 
-- TypeSript - language
-- IDE - Visual Studio Code
+- Language - TypeSript
 - Framework - Angular 16
+- IDE - Visual Studio Code
 - Styling - SCSS
 - Mobile First - desingn methodology
 - BEM - class naming methodology
@@ -89,8 +89,7 @@ As a planning documentation for this and [backend project](https://github.com/ma
 
 ## Resources and References
 
-https://www.w3schools.com
-
+- [W3Scools](https://www.w3schools.com) - general information about HTML and CSS
 - [Official Angular website](https://angular.io) - Angular info
 - [W3Schools](https://www.w3schools.com) - CSS styling
 - [Stack Overflow](https://stackoverflow.com) - troubleshooting
