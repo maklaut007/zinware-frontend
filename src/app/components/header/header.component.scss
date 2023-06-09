@@ -22,8 +22,8 @@
   text-transform: uppercase;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   &__image {
-    margin-right: 10px;
-    height: 50px;
+    margin-right: 5px;
+    height: 40px;
     vertical-align: middle;
   }
 }
@@ -77,5 +77,13 @@
   }
   .header {
     padding: 0 10vw 0 5vw;
+  }
+}
+.menu {
+  display: flex;
+  & > {
+    .auth-link {
+      margin-right: 10px;
+    }
   }
 }

@@ -23,6 +23,10 @@ export class HeaderComponent {
     return !!token;
   }
 
+  onLogOut() {
+    localStorage.removeItem('jwt');
+    location.reload();
+  }
   /**
    * If there is a token in local storage, get the cart items from the API
    * Subscription to the cartUpdated event to update the number of items in the cart

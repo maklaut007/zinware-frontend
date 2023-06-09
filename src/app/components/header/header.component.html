@@ -4,12 +4,13 @@
     <div class="company-name">Zinware</div>
   </a>
 
-  <ng-container *ngIf="getTokenFromLocalStorage()">
+  <div class="menu" *ngIf="getTokenFromLocalStorage()">
+    <div class="auth-link" (click)="onLogOut()">Log out</div>
     <a [routerLink]="['/cart']" class="cart">
       <div class="prod-number">{{ numberInCart }}</div>
       <img class="cart__image" src="/assets/images/cart-icon.png" alt="cart" />
     </a>
-  </ng-container>
+  </div>
 
   <div class="auth" *ngIf="!getTokenFromLocalStorage()">
     <a [routerLink]="['/login']" class="auth-link">Sign In</a>
