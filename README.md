@@ -1,15 +1,17 @@
-# Zinware Angular App
+# Zinware E-Commerce Angular App
 
-- [Zinware Angular App](#zinware-angular-app)
+- [Zinware E-Commerce Angular App](#zinware-e-commerce-angular-app)
   - [Overview](#overview)
-  - [Tools and Technologies](#tools-and-technologies)
+  - [Technologies and Methodologies](#technologies-and-methodologies)
   - [Approach](#approach)
     - [User stories](#user-stories)
     - [Visualizing](#visualizing)
     - [Result](#result)
   - [Planing documentation](#planing-documentation)
   - [Resources and References](#resources-and-references)
-  - [Shoutouts](#shoutouts)
+  - [Credits](#credits)
+    - [Special Credit](#special-credit)
+    - [Instructors](#instructors)
 
 ## Overview
 
@@ -17,19 +19,20 @@ This project involves building a Front-end angular app for an e-commerce website
 
 You can find backend for this project [here](https://github.com/maklaut007/zinware-backend).
 
-## Tools and Technologies
+## Technologies and Methodologies
 
-- JavaScript
+- TypeSript - language
 - IDE - Visual Studio Code
 - Framework - Angular 16
 - Styling - SCSS
-- Testing -
+- Mobile First - desingn methodology
+- BEM - class naming methodology
 
 ## Approach
 
 ### User stories
 
-First thing before creating a website I wrote user stories of how user should interact with pages. I split my work into interations between which I did my backend for the next one.
+First thing before creating a website I wrote user stories of how user should interact with pages. I split my work into interations between and completed each one after compliting iteration on the backend.
 
 Iteration One - Public pages:
 
@@ -68,7 +71,7 @@ Colors for my page were:
 
 ### Result
 
-I created 7 total pages with their own functionality and purpose
+I created 7 total pages with their own functionality and purpose using mobile first development
 
 - Categories page
 - Category products page
@@ -97,4 +100,16 @@ https://www.w3schools.com
 - [Font Awesome](https://fontawesome.com) - icons
 - [BEM](https://getbem.com) - classes naming methodology
 
-## Shoutouts
+## Credits
+
+### Special Credit
+
+- [Jeff Ou](https://github.com/pophero110)
+- [Kevin Barrios](https://github.com/dayjyun)
+- Groupmates in Room #9 and others
+
+### Instructors
+
+- [Suresh Sigera](https://github.com/sureshmelvinsigera/)
+- [Leonardo Rodriguez](https://github.com/LRodriguez92)
+- Dhrubo Chowdhury
